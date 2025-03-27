@@ -47,6 +47,20 @@ Draw.io was used to illustrate the cloud-based Data Analytics Platform (DAP) bui
 ### Figure 1. Design of the DAP 
 <img width="468" alt="Figure 1  Design of the DAP" src="https://github.com/user-attachments/assets/53e7e69e-f8cd-46f5-9c19-05a4cf46557b" />
 
+Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR Operation Team and the City of Vancouver’s HR end user will have access to the DAP using a specific virtual server (server=HSVS-Oma)- web server.  The COV HR End User and HR Data Team will have direct access to the DAP as shown in Figure 1. All elements in the design, such as the S3 Buckets, ETL pipeline, Catalog, functions, and usage, are explained in detail in the different phases (Steps 1 - 4) below. This design is continually scalable due to AWS’s scalable attributes.
+
+## 🚪 Step 1. Dataset Ingestion
+#### Objective 
+•	To ingest CSV file of the data into the AWS cloud
+#### Key AWS Service and Resources  
+•	AWS S3 Bucket
+#### Process
+•	An S3 bucket titled ‘cov-raw-oma’ was prepared in AWS for the ingestion.
+•	A subfolder titled hr was created. This is because the data is attributed to the COV Human Resources E.D.I.O Office.
+•	The dataset titled “workforce_payrates_and_sex” in CSV format was uploaded directly into the prepared S3 bucket folder.
+### Figure 2: Screenshot of Data Ingestion
+
+
 
 
 
