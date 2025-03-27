@@ -2,10 +2,10 @@
 
 # Project Title: Design and Implementation of DAP on AWS for the City of Vancouver
 
-## Project Description
+## 🗂️ Project Description
 This project showcases the design and implementation of a Data Analytics Platform on AWS for the City of Vancouver (COV). The platform will be used to perform descriptive analysis, starting from data ingestion, processing, analytics, storage, and data summarization, leveraging AWS solutions offered through the AWS console. Additionally, the DAP is expected to leverage key attributes of the AWS space, such as dynamic scalability, availability, and self-tailored cost-effectiveness and efficiency.
 
-## Methodology
+## 🔷 Methodology
 
 i.	Design:  The DAP was designed as requested using Draw.io 
 
@@ -20,9 +20,9 @@ v.	Data Catalog:  Using Crawler on AWS Data Glue, a data catalog comprising sche
 vi.	Data Summarization: The dataset is summarized using metrics created in AWS Glue and stored in a system-friendly format with multiple partitions and a user-friendly format in a single file in AWS S3 Curated Bucket.
 
 # Data Analytics Platform
-## Objective
+## 📌 Objective
 To design and implement DAP to support COV’s migration initiative to AWS
-## Descriptive Analysis
+## 📊 Descriptive Analysis
 Question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?
 ## 📋 Dataset Overview
 The dataset represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Table 1:
