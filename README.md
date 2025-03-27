@@ -24,16 +24,24 @@ vi.	Data Summarization: The dataset is summarized using metrics created in AWS G
 To design and implement DAP to support COV’s migration initiative to AWS
 ## Descriptive Analysis
 Question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?
-## Dataset Overview
-The dataset represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Figure 1:
-1.	Year: Data extraction year
-2.	Exempt/Union: Union or exempt status of workforce.
-3.	Classification: The classification of the job position titles
-4.	PositionTitle: The job position title.
-5.	DataCategory: The detail status (level of detail) of each data row
-6.	MinimumHourlyRate: The minimum pay rate per hour for each gender according to each classification row.
-7.	MaximumHourlyRate: The maximum pay rate per hour for each gender based on the row.
-8.	Female: Count of female workforce represented within each row 
-9.	Male: Count of the city’s job staff represented within each row 
-10.	Total: The total number of females and males.
+## 📋 Dataset Overview
+The dataset represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Table 1:
+
+## Table 1
+## 🏷️ Key Columns
+| Column              | Description                                |
+|---------------------|--------------------------------------------|
+| `Year`              | Data ranges from **2019 to 2023**          |
+| `ExemptUnion`       | Contains 7 different values (e.g., CUPE 15, Exempt) |
+| `Classification`    | 68 different job classifications              |
+| `PositionTitle`     | 152 different job titles                      |
+| `DataCategory`      | Always "Detail"     |
+| `MinimumHourlyRate` | Min: \$0.01, Max: \$75.31, Mean: \$35.18   |
+| `MaximumHourlyRate` | Min: \$0.01, Max: \$82.92, Mean: \$40.52   |
+| `Female`            | Employee count within each row; Ranges from 0 to 214     |
+| `Male`              | Employee count within each row; Ranges from 0 to 561                       |
+| `Total`             | Employee count within each row; Ranges from 10 to 584 (sum of Male + Female) |
+
+
+
 
