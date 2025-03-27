@@ -25,7 +25,7 @@ To design and implement DAP to support COV’s migration initiative to AWS
 ## 📊 Descriptive Analysis
 Question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?
 ## 📋 Dataset Overview
-The dataset represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Table 1:
+The dataset was extracted from City of Vancouver's Open Data Source (2025). It represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Table 1:
 
 ## Table 1
 ## 🏷️ Key Columns
