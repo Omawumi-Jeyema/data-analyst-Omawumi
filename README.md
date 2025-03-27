@@ -27,8 +27,8 @@ Question: What is the average minimum and maximum hourly pay rate for each City 
 ## 📋 Dataset Overview
 The dataset was extracted from City of Vancouver's Open Data Source (2025). It represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Table 1:
 
-## Table 1
-## 🏷️ Key Columns
+### Table 1
+### 🏷️ Key Columns
 | Column              | Description                                |
 |---------------------|--------------------------------------------|
 | `Year`              | Data ranges from **2019 to 2023**          |
@@ -41,6 +41,13 @@ The dataset was extracted from City of Vancouver's Open Data Source (2025). It r
 | `Female`            | Employee count within each row; Ranges from 0 to 214     |
 | `Male`              | Employee count within each row; Ranges from 0 to 561                       |
 | `Total`             | Employee count within each row; Ranges from 10 to 584 (sum of Male + Female) |
+
+## 🧩 DAP Design and Implementation
+Draw.io was used to illustrate the cloud-based Data Analytics Platform (DAP) built on AWS, optimized for analyzing  COV’s workforce pay rates and gender distribution. The architecture integrates key AWS services such as S3 for data storage, AWS GlueDatabrew and Glue for cleaning, profiling and ETL processes.
+### Figure 1. Design of the DAP 
+<img width="468" alt="Figure 1  Design of the DAP" src="https://github.com/user-attachments/assets/53e7e69e-f8cd-46f5-9c19-05a4cf46557b" />
+
+
 
 
 
