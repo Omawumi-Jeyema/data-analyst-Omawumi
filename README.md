@@ -29,6 +29,7 @@ The dataset was extracted from City of Vancouver's Open Data Source (2025). It r
 
 ### Table 1
 ### 🏷️ Key Columns
+
 | Column              | Description                                |
 |---------------------|--------------------------------------------|
 | `Year`              | Data ranges from **2019 to 2023**          |
@@ -66,7 +67,7 @@ Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR 
 
 Note: Figure 4 shows the completed ingestion of the City of Vancouver’s Government and Finance data set ‘workforce_payrates_and_sex’ into the S3 bucket ’cov-raw-oma’. The path is s3://cov-raw-oma/hr/year=2025/
 
-### Justification
+### ⚖️ Justification
 This was done to ingest the data into the AWS cloud storage for easy access, query, collaboration, analytical management, storage, security, and scalability of the WPRS data.
 
 
