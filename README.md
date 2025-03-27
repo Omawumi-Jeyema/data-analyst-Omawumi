@@ -50,15 +50,28 @@ Draw.io was used to illustrate the cloud-based Data Analytics Platform (DAP) bui
 Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR Operation Team and the City of Vancouver’s HR end user will have access to the DAP using a specific virtual server (server=HSVS-Oma)- web server.  The COV HR End User and HR Data Team will have direct access to the DAP as shown in Figure 1. All elements in the design, such as the S3 Buckets, ETL pipeline, Catalog, functions, and usage, are explained in detail in the different phases (Steps 1 - 4) below. This design is continually scalable due to AWS’s scalable attributes.
 
 ## 🚪 Step 1. Dataset Ingestion
-#### Objective 
+### Objective 
 •	To ingest CSV file of the data into the AWS cloud
-#### Key AWS Service and Resources  
+### Key AWS Service and Resources  
 •	AWS S3 Bucket
-#### Process
+### 🧭 Process
 •	An S3 bucket titled ‘cov-raw-oma’ was prepared in AWS for the ingestion.
+
 •	A subfolder titled hr was created. This is because the data is attributed to the COV Human Resources E.D.I.O Office.
+
 •	The dataset titled “workforce_payrates_and_sex” in CSV format was uploaded directly into the prepared S3 bucket folder.
-### Figure 2: Screenshot of Data Ingestion
+
+### Figure 2: Workforce Pay Rates and Sex CSV File Ingested into AWS S3 Bucket
+<img width="468" alt="Figure 2  Screenshot of Ingested CSV file" src="https://github.com/user-attachments/assets/e402725a-95dd-42d2-91c6-5f557a885431" />
+
+Note: Figure 4 shows the completed ingestion of the City of Vancouver’s Government and Finance data set ‘workforce_payrates_and_sex’ into the S3 bucket ’cov-raw-oma’. The path is s3://cov-raw-oma/hr/year=2025/
+
+### Justification
+This was done to ingest the data into the AWS cloud storage for easy access, query, collaboration, analytical management, storage, security, and scalability of the WPRS data.
+
+
+### 🧹 
+
 
 
 
