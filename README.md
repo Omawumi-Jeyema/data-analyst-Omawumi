@@ -125,9 +125,34 @@ To clean the dataset by resolving any missing values, correcting data type incon
 
 <img width="412" alt="Figure 4  Data Cleaning Recipe" src="https://github.com/user-attachments/assets/72b0924c-b86c-4ee5-b62e-beb81c5ef643" />
 
+Note. Figure 4 shows the cleaning recipe which indicates the standardization of the ExemptUnion column for consistency. 
+
 ### Figure 5. Successful Cleaning Job
 
 <img width="412" alt="Figure 5  Successful Cleaning Job" src="https://github.com/user-attachments/assets/05faecb2-d008-4fb4-8e5e-5c2ea0b156b4" />
+
+Note. Figure 5 confirms the successful execution of the cleaning job. 
+
+### Figure 5.1. Cleaning Job Output Stored in S3 Bucket (User File)
+
+<img width="412" alt="Figure 5  1  Cleaning Job Output Stored in S3 Bucket_User File" src="https://github.com/user-attachments/assets/94188023-90f1-42c6-a37b-c714d30c0519" />
+
+### Figure 5.2. Cleaning Job Output Stored in S3 Bucket (System Files)
+<img width="412" alt="Figure 5  2  Cleaning Job Output Stored in S3 Bucket_System Files" src="https://github.com/user-attachments/assets/ba1c75de-ea76-452b-b391-cdbe319b94d7" />
+
+Note: Figures 5.1. and 5.2. show the cleaned WPRS dataset stored in single and multiple files in the user and system folders in S3 Bucket “cov-trf-oma.”  
+
+### Figure 5.3. Lifecycle Rule
+
+<img width="412" alt="Figure 5  3  Lifecycle Rule" src="https://github.com/user-attachments/assets/93645985-9097-4a56-95c7-26fa783bff56" />
+
+Note: Figure 5.3. shows that cost optimization was implemented. That is, after 30 days with no call-up, the WPRS data automatically transitions to the Glacier storage as a cost-efficiency strategy
+
+### ⚖️ Justification
+The cleaning of the profiled WPRS dataset was done to improve the consistency and quality of the data before further analysis. A lifecycle rule was added for efficiency. Implementing a lifecycle rule for the cleaned WPRS dataset is a strategic approach to balancing accessibility and cost efficiency. Since payroll records are critical and often accessed by HR in the short term, storing them initially in Amazon S3 Standard ensures high availability and quick retrieval. However, as access frequency diminishes over time, automatically transitioning the data to Glacier storage after 30 days significantly reduces long-term storage costs without compromising data retention. This policy supports both operational needs and sustainable cost management within the data lifecycle.
+
+
+
 
 
 
