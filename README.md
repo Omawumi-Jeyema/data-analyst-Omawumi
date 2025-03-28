@@ -360,10 +360,72 @@ The S3 replication was implemented to improve its availability of the database, 
 •	Data quality rules were implemented for the WPRS data to ensure data organization, assessment, quality, compliance, and accuracy within the DAP. The rules included “Completeness for PositionTitle >= 0.95”, “Uniqueness for ExemptUnion > 0.99” and “Data freshness for Year < 2,555 days” to rule out any data that exceeds 7 years”. 
 •	Several more transforming and loading steps like changing schema (to Drop the extra quality rules and evaluation columns created), auto- balancing and eventual loading of the CSV outputs to the “Passed and Failed folders in the AWS S3 Bucket”.
 
+### Figure 19. Implemented Data Quality Rules (cov-hr-wprs-QC-Oma)
+
+<img width="412" alt="Figure 19  Implemented Data Quality Rules" src="https://github.com/user-attachments/assets/84d42176-35c7-4d7f-b0be-94eda3a911f4" />
+
+Note: Figure 19 shows the data quality rules set for this Glue job job “cov-hr-wprs-QC-Oma” explained above.
+
+### Figure 20. ETL Pipeline for Data Quality Control
+
+<img width="412" alt="Figure 20  ETL Pipeline for Data Quality Control" src="https://github.com/user-attachments/assets/3129e6ad-ec61-42e0-8245-e6daeab0771d" />
+
+Note. Figure 20 shows the completed ETL pipleline after all ETL steps had been successfully completed.
+
+### Figure 21. Successful Data Quality Job Run “cov-hr-wprs-QC-Oma”
+
+<img width="412" alt="Figure 21  Successful Data Quality Job Run" src="https://github.com/user-attachments/assets/fe740c4b-c720-4c38-8cca-6cdcb94d6a80" />
+
+Note. Figure 21 shows the Successful Job Run of the data quality job“cov-hr-wprs-QC-Oma” within 1m 41seconds.
+
+### Figure 21.1. Data Quality Job Output “Passed” in AWS S3 Trf Bucket 
+
+<img width="412" alt="Figure 21 1  Data Quality Job Output_Passed" src="https://github.com/user-attachments/assets/75f861b2-da48-46fd-ac49-8eaedf523e96" />
+
+### Figure 21.2. Data Quality Job Output (Failed) in AWS S3 Trf Bucket
+
+<img width="412" alt="Figure 21 2  Data Quality Job Output_Failed" src="https://github.com/user-attachments/assets/38104f1f-19ed-4048-b932-4669ba71108b" />
+
+Note.  Figure 21 shows that the data quality check was successfully run. Figures 21.1. and 21.2 show the output of the successful job run titled “Passed” and “Failed” in the AWS S3 Transformed Bucket.
+
 ### ⚖️ Justification
 
+This data governance implementation was done for the WPRS data to ensure that quality control rules were established to foster consistency, improve the WPRS data quality, organization, and accuracy within the DAP. 
 
 
+
+### 📌 Objective
+•	To proactively monitor the COV WPRS resources for actionable insights.
+•	To track WPRS user activities and API usage across the COV DAP for auditing and traceability.
+
+### ☁️ AWS Management Console Service and Resources Used
+•	AWS CloudWatch
+•	AWS CloudTrail
+
+### 🧭 Process
+•	In order to systematically and proactively monitor the reliability, performance, and storage capacity, AWS CloudWatch was configured using AWS S3 buckets as the metrics. 
+•	A threshold was set at 60,000kb and a corresponding alarm was configured for notifications in the event of breaches. 
+•	Frequency of monitoring was set at daily for regular monitoring. 
+•	Likewise, CloudTrail was set to capture and record COV DAP user logs and activity monitoring.
+
+### Figure 22.1. Threshold Set at 60.0K BucketSizeBytes
+
+<img width="412" alt="Figure 22 1  Threshold Setting" src="https://github.com/user-attachments/assets/7a9e7c70-26e4-4f57-870c-92cfaeca63b6" />
+
+
+Note. Figure 22.1 shows the threshold set at 60.0k using CloudWatch. The bucket size is currently at 49.6K Bucket Size Bytes.
+
+### Figure 22.2. Configured CloudWatch Dashboard (cov-hr-wprs-MCH-oma)
+
+<img width="412" alt="Figure 22 2  Configured CloudWatch Dashboard" src="https://github.com/user-attachments/assets/f033ac32-98fc-4588-b146-8d8658563140" />
+
+
+Note. Figure 22.2 shows the configured (cov-hr-wprs-MCH-oma) board for monitoring the set metric and the configured alarm for the 60.0K BucketSizeBytes threshold.
+
+
+
+
+### ⚖️ Justification
 
 
 
