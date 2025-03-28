@@ -1,13 +1,5 @@
 # data-analyst-Omawumi 
 
-![aws-academy-graduate-aws-academy-cloud-foundations](https://github.com/user-attachments/assets/b019969a-66de-4dc4-9470-a8383c6ffc4c) 
-
-![aws-academy-graduate-aws-academy-cloud-foundations (2)](https://github.com/user-attachments/assets/01390e60-e6e4-4c7a-9869-0085620169ea) <img width="229" alt="AWS Badge Cert" src="https://github.com/user-attachments/assets/66d0a6b5-1f19-49d5-b877-e8448a571c0d" />
-
-
-
-
-
 # Project Title: Design and Implementation of DAP on AWS for the City of Vancouver
 
 # Project Phase 1
@@ -498,6 +490,8 @@ Although some of the best practices from AWS Reliability Pillar can be observed 
 
 # 🧑‍⚖️ Authour
 
+![Badge 2](https://github.com/user-attachments/assets/67b0cd01-fbbe-4542-8718-6b9dad0cf0e3)  <img width="229" alt="AWS Badge Cert" src="https://github.com/user-attachments/assets/b5f46705-bfd2-4cea-9d52-e9ffa0d45f55" />
+
 ## Omawumi Jeyema
 
 ## MBA Candidate  | MSc | Business Analyst | Cloud Practitioner
@@ -508,9 +502,6 @@ Although some of the best practices from AWS Reliability Pillar can be observed 
 # 📌 License
 
 ## No commercial use allowed. This project is for academic demonstration only.
-
-
-
 
 
 
