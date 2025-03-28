@@ -236,6 +236,8 @@ Note: Figure 16 shows an additional table is auto-added to the WPRS data catalog
 
 The AWS Glue summarization job was implemented to answer the analytical question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s job classification? The job groups the cleaned dataset by the categorical column Classification and computes the average values for both MinimumHourlyRate and MaximumHourlyRate. This aggregation simplifies the dataset, enabling efficient querying and visualization of pay rate trends across job classifications in downstream tools such as Amazon Athena and QuickSight.
 
+# Conclusion
+In fulfillment of the Project’s request, this project focused on building a Data Analyst Platform for its Workforce Pay Rates and Sex data management. The pipeline is AWS-based, and key AWS console functionalities such as S3 buckets, AWS Glue and AWS Glue BrewData were used to achieve this as described in the stated steps above. The DAP was structured to ensure efficient data ingestion, availability, accessibility, security, and management, including storage. It also supports querying and analysis. It was used to answer the question, what is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?	The summarization stage effectively answered the question, revealing each the 68 city job classifications and their average minimum and maximum hourly pay rate.
 
 
 
