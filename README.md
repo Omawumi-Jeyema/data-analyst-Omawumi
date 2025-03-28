@@ -212,7 +212,7 @@ The steps shown in Figure 10. below were followed as follows:
 
 <img width="412" alt="Figure 10  ETL Pipeline" src="https://github.com/user-attachments/assets/2907f197-8bf4-4b08-8d89-411372684c4c" />
 
-Figure 11. Successful Job Run of Summarized Data
+### Figure 11. Successful Job Run of Summarized Data
 
 <img width="412" alt="Figure 11  Successful Job Run of Summarized Data" src="https://github.com/user-attachments/assets/18b0de17-84fb-49e0-8e3e-3bf4b6d377fd" />
 
@@ -224,8 +224,17 @@ Figure 11. Successful Job Run of Summarized Data
 
 <img width="412" alt="Figure 11 2  Summarized Data Report for System Users" src="https://github.com/user-attachments/assets/2063de3c-0933-42c6-83a2-6a8dbcd3bdd5" />
 
-###
+Note Note: The summarized files were saved as Report_Date in the S3 Curated Bucket under metrics for users and metrics for the system, as shown in Figures 11.1 and 11.2. The Report_Date User folder has one output due to the choice of the single output option, while the multiple files option was selected for the system folder
 
+### Figure 12. Automaticaaly Updated Data Catalog Table (Post-Summarization)
+
+<img width="412" alt="Figure 12  Automatically Updatad Data Catalog Tables" src="https://github.com/user-attachments/assets/a39637ad-379c-4e05-8baf-3e4d325f4d17" />
+
+Note: Figure 16 shows an additional table is auto-added to the WPRS data catalog in AWS Glue upon completion of the summarization process.
+
+### ⚖️ Justification
+
+The AWS Glue summarization job was implemented to answer the analytical question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s job classification? The job groups the cleaned dataset by the categorical column Classification and computes the average values for both MinimumHourlyRate and MaximumHourlyRate. This aggregation simplifies the dataset, enabling efficient querying and visualization of pay rate trends across job classifications in downstream tools such as Amazon Athena and QuickSight.
 
 
 
