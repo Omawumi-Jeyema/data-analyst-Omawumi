@@ -422,11 +422,27 @@ Note. Figure 22.1 shows the threshold set at 60.0k using CloudWatch. The bucket 
 
 Note. Figure 22.2 shows the configured (cov-hr-wprs-MCH-oma) board for monitoring the set metric and the configured alarm for the 60.0K BucketSizeBytes threshold.
 
+### Figure 23. Configured CloudTrail Logging
 
+<img width="412" alt="Figure 23  Configured CloudTrail Logging" src="https://github.com/user-attachments/assets/b385c4fa-417b-43c4-9fa4-5fe5befb9a27" />
 
+Note. Figure 23 is a screenshot of the configured CloudTrail “cov-hr-wprs-tra-oma” for logging COV DAP WPRS user activities.
 
 ### ⚖️ Justification
 
+Due to the fact that expected storage demand is not exactly known and Workforce statistics are subject to modification, it is important to keep track of changes in the storage resource utilization to enable proactive management geared at optimum efficiency. Additionally, the set thresholds are for monitoring the storage size so that actions can be taken when the storage size exceeds it. The Outputs for the CloudTrail configuration like captured user logs, are vital for traceability, which is a security pillar and also helps to ensure compliance among users, specifically during audits or in the case of any uncertainty regarding the responsible party for any action taken in the DAP. 
+
+# Evaluation of the Data Analytic Platform (DAP) Based on AWS Reliability Principles
+A key requirement for a Data Analytics Platform is reliability. A shortage of this could pose numerous risks to the DAP and the confidence of its users. Therefore, it is insightful to Evaluate the developed COV DAP using the AWS Well-Architected Framework Reliability Pillars as benchmarks. Some of the DAPs current key alignment to the Reliability Pillars includes monitoring and automation as explained below.
+
+## Aligned Reliability Practices
+•	Automation: Many AWS services, such as AWS Glue, thrive on automation as this greatly reduces the risk of errors and supports change management. 
+•	Monitoring and Notifications (Alarms): The AWS service CloudWatch was implemented to monitor key metrics like AWS S3 bucket storage capacity, and alarms setup using thresholds as a monitoring strategy for breaches and threats.
+The above-mentioned points align with recommendations from AWS regarding monitoring targeted at failure detection and consistent change management using automation.
+
+## Identified Gaps
+Some AWS Reliability Pillars not fully captured in the DAP include the management of service quotas, testing recovery procedures and multi-region deployment. The absence of defined service quotas management processes, frequent recovery procedures testing, and multi-region deployment (the DAP is only deployed in a single region at the moment) poses serious reliability risks which must be tracked and mitigated.
+Although some of the best practices from AWS Reliability Pillar can be observed in the Dap, it is imperative to close the gaps mentioned above to strengthen the DAP’s reliability.
 
 
 
