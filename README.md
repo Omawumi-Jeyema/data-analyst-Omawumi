@@ -317,13 +317,13 @@ The Athena query was executed to generate a summarized view of average minimum a
 •	AWS Key Management Service (KMS) 
 •	AWS S3 Buckets
 ### 🧭 Process
-Security measures were implemented to secure the Workforce sensitive data within the DAP. 
+•	Security measures were implemented to secure the Workforce sensitive data within the DAP. 
 
-Starting with creating a key using KMS for encryption and decryption. After which, permission was provided for different roles using Lab roles, creating scripts and eventually a policy. 
+•	Starting with creating a key using KMS for encryption and decryption. After which, permission was provided for different roles using Lab roles, creating scripts and eventually a policy. 
 
-Additionally, versioning was done for the S3 to improve confidentiality. 
+•	Additionally, versioning was done for the S3 to improve confidentiality. 
 
-A backup S3 bucket was created, and a replication rule was implemented.
+•	A backup S3 bucket was created, and a replication rule was implemented.
 
 ### Figure 15. Key Management Service (KMS)
 
@@ -345,11 +345,22 @@ Note. Figure 6 shows the configured KMS for encryption and decryption of the dat
 
 Note. Figure 16, 17, and 18 shows the successful encryption, versioning, and replication rule implementation.
 
+### ⚖️ Justification
 
+The S3 replication was implemented to improve its availability of the database, and versioning and key creation were done to confidentiality and encryption, respectively.
 
+# Data Governance
+### 📌 Objective
+•	To implement policies and controls targeted at the WPRS data quality, consistency, accuracy and accountability in the DAP.
+### ☁️ AWS Management Console Service and Resources Used
+•	Data Glue
+•	S3 Bucket
+### 🧭 Process
+•	Deployed AWS Glue, where a visual ETL pipeline was created for the WPRS data starting with extract (from AWS S3 Bucket), before proceeding to transform the loaded WPRS data using quality checks. 
+•	Data quality rules were implemented for the WPRS data to ensure data organization, assessment, quality, compliance, and accuracy within the DAP. The rules included “Completeness for PositionTitle >= 0.95”, “Uniqueness for ExemptUnion > 0.99” and “Data freshness for Year < 2,555 days” to rule out any data that exceeds 7 years”. 
+•	Several more transforming and loading steps like changing schema (to Drop the extra quality rules and evaluation columns created), auto- balancing and eventual loading of the CSV outputs to the “Passed and Failed folders in the AWS S3 Bucket”.
 
-
-
+### ⚖️ Justification
 
 
 
