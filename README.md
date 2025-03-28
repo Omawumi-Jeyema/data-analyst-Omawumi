@@ -247,7 +247,7 @@ The AWS Glue summarization job was implemented to answer the analytical question
 In fulfillment of the Project’s request, this project focused on building a Data Analyst Platform for its Workforce Pay Rates and Sex data management. The pipeline is AWS-based, and key AWS console functionalities such as S3 buckets, AWS Glue and AWS Glue BrewData were used to achieve this as described in the stated steps above. The DAP was structured to ensure efficient data ingestion, availability, accessibility, security, and management, including storage. It also supports querying and analysis. It was used to answer the question, what is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?	The summarization stage effectively answered the question, revealing each the 68 city job classifications and their average minimum and maximum hourly pay rate.
 
 
-# Project Phase 1
+# Project Phase 2
 
 ## 🗂️ Project Description
 
@@ -300,11 +300,12 @@ Using the the SQL query: select exemptunion, avg(maximumhourlyrate) as maximumho
 | 6 | Senior Exempt           | 81.952                 | 65.6610                |
 | 7 | CUPE 15                 | 36.6943                | 31.6673                |
 
-### Figure 14.3. Descriptive Question 1
+Note. Table 2 displays the results from the Athena query. It shows the 7 Union Types and the minimum and maximum hourly pay rates for each.
 
-Why was it done?
-	This City of Vancouver WPRS dataset was analyzed based on the above descriptive questions to understand the difference in pay rates across ExemptUnions and also across different position titles. Unfortunately, the available data from COV was insufficient to analyze the difference and trends in the gender pay profile. 
-![image](https://github.com/user-attachments/assets/9bd631be-90fd-42fa-9573-30d3f7654e96)
+### ⚖️ Justification
+
+This City of Vancouver WPRS dataset was analyzed based on the above descriptive questions to understand the difference in pay rates across ExemptUnions and also across different position titles. Unfortunately, the available data from COV was insufficient to analyze the difference and trends in the gender pay profile. 
+
 
 
 
