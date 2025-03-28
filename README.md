@@ -474,6 +474,40 @@ Some AWS Reliability Pillars not fully captured in the DAP include the managemen
 Although some of the best practices from AWS Reliability Pillar can be observed in the Dap, it is imperative to close the gaps mentioned above to strengthen the DAP’s reliability.
 
 
+# 🔮 Future Enhancements
+
+### 1. Automate Data Ingestion
+- Use **AWS Lambda** and **EventBridge** to trigger ETL pipelines when new data is uploaded to S3.
+- Schedule regular ingestion (e.g., annually or quarterly).
+
+### 2. Incorporate Historical Trend Analysis
+- Store multi-year snapshots to track pay progression and workforce size changes.
+- Analyze gender representation trends over time.
+
+### 3. Implement Pay Equity Analysis
+- Compare average pay by gender within each classification or union.
+- Identify and visualize disparities to support DEI initiatives.
+
+### 4. Enrich Dataset with External Sources
+- Integrate job performance, tenure, or department-level data.
+- Add external indexes like inflation or cost of living for adjusted pay analysis.
+
+### 5. Deploy Interactive Dashboards
+- Build dynamic dashboards with **Amazon QuickSight**.
+- Add filters for year, classification, and gender for user-friendly exploration.
+
+# 🧑‍⚖️ Authour
+
+## Omawumi Jeyema
+
+## MBA Candidate  | MSc | Business Analyst | Cloud Practitioner
+
+# 🤝 Contact
+## 📨 Email: omawumijeyema@gmail.com
+
+# 📌 License
+
+## No commercial use allowed. This project is for academic demonstration only.
 
 
 
