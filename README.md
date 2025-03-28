@@ -53,7 +53,7 @@ Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR 
 ## 🚪 Step 1. Dataset Ingestion
 ### 📌 Objective 
 •	To ingest CSV file of the data into the AWS cloud
-### Key AWS Service and Resources  
+### ☁️ AWS Management Console Service Used 
 •	AWS S3 Bucket
 ### 🧭 Process
 •	An S3 bucket titled ‘cov-raw-oma’ was prepared in AWS for the ingestion.
@@ -73,7 +73,7 @@ This was done to ingest the data into the AWS cloud storage for easy access, que
 ## 🔍 Step 2. Data Profiling
 ### 📌 Objective 
 •	To perform data profiling on the dataset to assess data quality, detect anomalies, and ensure readiness for data cleaning and transformation.
-### Key AWS Service and Resources
+### ☁️ AWS Management Console Service Used 
 •	AWS Glue DataBrew
 •	AWS S3 Bucket
 ### 🧭 Process
@@ -109,7 +109,7 @@ Profiling the dataset with AWS Glue DataBrew provided a clear assessment of data
 ## 🧹 Step 3. Data Cleaning
 ### 📌 Objective 
 To clean the dataset by resolving any missing values, correcting data type inconsistencies, removing duplicates, and standardizing entries to ensure data integrity and consistency for downstream analysis.
-### Key AWS Service and Resources
+### ☁️ AWS Management Console Service Used 
 •	S3 Bucket
 
 •	AWS Glue DataBrew
@@ -154,7 +154,7 @@ The cleaning of the profiled WPRS dataset was done to improve the consistency an
 ## 🔖 Step 4 Data Cataloging
 ### 📌 Objective 
 To create an AWS data catalog for the WPRS data that consists of structured schemas for easy connections between the data areas and support consistency.
-Key AWS Console Service and Resources
+### ☁️ AWS Management Console Service Used 
 •	AWS S3 Bucket
 
 •	AWS Glue
@@ -180,6 +180,38 @@ Note: Figure 7, 8, and 9 illustrate the successful setup of the AWS Glue Crawler
 ### ⚖️ Justification
 
 The AWS Glue Crawler was implemented to automatically detect the schema of the cleaned Workfoce Payrates and Sex dataset and catalog it into a defined database and corresponding Data Catalog table. This process eliminates the need for manual schema definition, ensures consistent metadata management, and enables seamless querying through Amazon Athena. By registering the dataset within a structured database and table in the Glue Data Catalog, the data becomes fully discoverable, queryable, and ready for integration with downstream analytics tools such as Athena and QuickSight.
+
+## Step 5. Data Summarization
+### 📌 Objective 
+To summarize the data using categorical data and several metrics. 
+### ☁️ AWS Management Console Service Used 
+•	AWS S3 Bucket
+•	AWS Glue
+### 🧭 Process
+The steps shown in Figure 10. below were followed as follows:
+•	Extract WPRS: The prepared data was extracted from the database ‘cov-data-catalog-oma’ and table ‘cov-hr-trf-system’.
+
+•	Change Schema: This was used to drop a column.
+
+•	Filter WPRS: This was used to filter rows. Only rows from 2019 and above were retained.
+
+•	Summarize WPRS: The data was grouped using the categorical column titled “Classification” and aggregated using average minimum hourly pay and average maximum hourly rate to generate metrics.
+
+•	Add date to summarized WPRS: The report date was added to the summarized WPRS from the step above
+
+•	Convert to LTZ: The data added to the summarized WPRS was converted to LTZ (Local time zone) 
+
+•	Prepare to Load: The initial date added was dropped and the LTZ date version was retained. The schema was reviewed, and the titles adjusted to ensure consistency.
+
+•	Load System and Load Users: The steps were done to ensure the file is stored in an easily accessible manner to both users and systems, with the right partitioning and compression or “no compression” for each. The convert to one file option was used to harmonize both.
+
+•	Save and Run: The summarized job was saved and run as shown in Figure 14 below.
+
+### Figure 10: The ETL Pipeline (WorkForcePayRatesAndSex-Summarization)
+
+<img width="412" alt="Figure 10  ETL Pipeline" src="https://github.com/user-attachments/assets/2907f197-8bf4-4b08-8d89-411372684c4c" />
+
+
 
 
 
