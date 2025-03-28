@@ -501,7 +501,7 @@ Open Data Change Log. (25 February, 11). https://opendata.vancouver.ca/explore/d
 
 ## MBA Candidate  | MSc | Business Analyst | Cloud Practitioner
 
-# 🤝 Contact
+# 📬 Contact 
 ## 📨 Email: omawumijeyema@gmail.com
 
 # 📌 License
