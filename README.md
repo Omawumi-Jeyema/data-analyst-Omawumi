@@ -142,14 +142,39 @@ Note. Figure 5 confirms the successful execution of the cleaning job.
 
 Note: Figures 5.1. and 5.2. show the cleaned WPRS dataset stored in single and multiple files in the user and system folders in S3 Bucket “cov-trf-oma.”  
 
-### Figure 5.3. Lifecycle Rule
+### Figure 6. Lifecycle Rule
 
 <img width="412" alt="Figure 5  3  Lifecycle Rule" src="https://github.com/user-attachments/assets/93645985-9097-4a56-95c7-26fa783bff56" />
 
-Note: Figure 5.3. shows that cost optimization was implemented. That is, after 30 days with no call-up, the WPRS data automatically transitions to the Glacier storage as a cost-efficiency strategy
+Note: Figure 6. shows that cost optimization was implemented. That is, after 30 days with no call-up, the WPRS data automatically transitions to the Glacier storage as a cost-efficiency strategy
 
 ### ⚖️ Justification
 The cleaning of the profiled WPRS dataset was done to improve the consistency and quality of the data before further analysis. A lifecycle rule was added for efficiency. Implementing a lifecycle rule for the cleaned WPRS dataset is a strategic approach to balancing accessibility and cost efficiency. Since payroll records are critical and often accessed by HR in the short term, storing them initially in Amazon S3 Standard ensures high availability and quick retrieval. However, as access frequency diminishes over time, automatically transitioning the data to Glacier storage after 30 days significantly reduces long-term storage costs without compromising data retention. This policy supports both operational needs and sustainable cost management within the data lifecycle.
+
+## 🔖 Step 4 Data Cataloging
+### 📌 Objective 
+To create an AWS data catalog for the WPRS data that consists of structured schemas for easy connections between the data areas and support consistency.
+Key AWS Console Resources
+•	AWS S3 Bucket
+
+•	AWS Glue
+
+### 🧭 Process
+•	As shown in Figure 11, a new database for the dataset titled ‘cov-data-catalog-oma’ was created.
+•	Structured information stored in tables (containing Schema) titled ‘cov_hr_trf_system was also created as an output of running crawler in AWS Data Glue.
+
+### Figure 7. Database Created
+
+<img width="412" alt="Figure 7  Database Created" src="https://github.com/user-attachments/assets/07118951-8c6a-4ac6-ab69-6afa2360fcff" />
+
+### Figure 8. Data Catalog Table
+
+<img width="412" alt="Figure 8  Data Catalog Table Created" src="https://github.com/user-attachments/assets/c0faff44-5dea-4fab-8ea1-ec89540fdca6" />
+
+### Figure 9. Successful Crawler Job Run
+
+<img width="468" alt="Figure 9  Successful Crawler Job Run" src="https://github.com/user-attachments/assets/47a8a442-dd99-4717-beed-dd6e0f451851" />
+
 
 
 
