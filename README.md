@@ -1,5 +1,8 @@
 # data-analyst-Omawumi 
 
+![aws-academy-graduate-aws-academy-cloud-foundations](https://github.com/user-attachments/assets/b019969a-66de-4dc4-9470-a8383c6ffc4c)
+
+
 # Project Title: Design and Implementation of DAP on AWS for the City of Vancouver
 
 # Project Phase 1
@@ -253,7 +256,7 @@ In fulfillment of the Project’s request, this project focused on building a Da
 
 Sequel to the completion of Project Phase 1, Project Phase 2 seeks to leverage the AWS solutions to implement Data Analysis, Governing, Security, and Monitoring components of the AWS DAP Implementation for the City of Vancouver (COV). This submission showcases the steps taken to execute each of these processes and efficiently deploy them according to AWS best practices and well-designed Architecture to achieve the desired results.
 
-## Data Analysis
+## 📊 Data Analysis
 
 ### 📌 Objectives
 •	To query the prepared city of Vancouver’s Workforce Pay Rates and Sex data in order to determine trends and answers to specific descriptive questions.
@@ -349,7 +352,7 @@ Note. Figure 16, 17, and 18 shows the successful encryption, versioning, and rep
 
 The S3 replication was implemented to improve its availability of the database, and versioning and key creation were done to confidentiality and encryption, respectively.
 
-# Data Governance
+## 🛡️ Data Governance
 ### 📌 Objective
 •	To implement policies and controls targeted at the WPRS data quality, consistency, accuracy and accountability in the DAP.
 ### ☁️ AWS Management Console Service and Resources Used
@@ -357,7 +360,9 @@ The S3 replication was implemented to improve its availability of the database, 
 •	S3 Bucket
 ### 🧭 Process
 •	Deployed AWS Glue, where a visual ETL pipeline was created for the WPRS data starting with extract (from AWS S3 Bucket), before proceeding to transform the loaded WPRS data using quality checks. 
+
 •	Data quality rules were implemented for the WPRS data to ensure data organization, assessment, quality, compliance, and accuracy within the DAP. The rules included “Completeness for PositionTitle >= 0.95”, “Uniqueness for ExemptUnion > 0.99” and “Data freshness for Year < 2,555 days” to rule out any data that exceeds 7 years”. 
+
 •	Several more transforming and loading steps like changing schema (to Drop the extra quality rules and evaluation columns created), auto- balancing and eventual loading of the CSV outputs to the “Passed and Failed folders in the AWS S3 Bucket”.
 
 ### Figure 19. Implemented Data Quality Rules (cov-hr-wprs-QC-Oma)
@@ -392,10 +397,11 @@ Note.  Figure 21 shows that the data quality check was successfully run. Figures
 
 This data governance implementation was done for the WPRS data to ensure that quality control rules were established to foster consistency, improve the WPRS data quality, organization, and accuracy within the DAP. 
 
-
+## 🚦 Data Monitoring
 
 ### 📌 Objective
 •	To proactively monitor the COV WPRS resources for actionable insights.
+
 •	To track WPRS user activities and API usage across the COV DAP for auditing and traceability.
 
 ### ☁️ AWS Management Console Service and Resources Used
@@ -404,8 +410,11 @@ This data governance implementation was done for the WPRS data to ensure that qu
 
 ### 🧭 Process
 •	In order to systematically and proactively monitor the reliability, performance, and storage capacity, AWS CloudWatch was configured using AWS S3 buckets as the metrics. 
+
 •	A threshold was set at 60,000kb and a corresponding alarm was configured for notifications in the event of breaches. 
+
 •	Frequency of monitoring was set at daily for regular monitoring. 
+
 •	Likewise, CloudTrail was set to capture and record COV DAP user logs and activity monitoring.
 
 ### Figure 22.1. Threshold Set at 60.0K BucketSizeBytes
@@ -432,12 +441,14 @@ Note. Figure 23 is a screenshot of the configured CloudTrail “cov-hr-wprs-tra-
 
 Due to the fact that expected storage demand is not exactly known and Workforce statistics are subject to modification, it is important to keep track of changes in the storage resource utilization to enable proactive management geared at optimum efficiency. Additionally, the set thresholds are for monitoring the storage size so that actions can be taken when the storage size exceeds it. The Outputs for the CloudTrail configuration like captured user logs, are vital for traceability, which is a security pillar and also helps to ensure compliance among users, specifically during audits or in the case of any uncertainty regarding the responsible party for any action taken in the DAP. 
 
-# Evaluation of the Data Analytic Platform (DAP) Based on AWS Reliability Principles
+## Evaluation of the Data Analytic Platform (DAP) Based on AWS Reliability Principles
 A key requirement for a Data Analytics Platform is reliability. A shortage of this could pose numerous risks to the DAP and the confidence of its users. Therefore, it is insightful to Evaluate the developed COV DAP using the AWS Well-Architected Framework Reliability Pillars as benchmarks. Some of the DAPs current key alignment to the Reliability Pillars includes monitoring and automation as explained below.
 
 ## Aligned Reliability Practices
 •	Automation: Many AWS services, such as AWS Glue, thrive on automation as this greatly reduces the risk of errors and supports change management. 
+
 •	Monitoring and Notifications (Alarms): The AWS service CloudWatch was implemented to monitor key metrics like AWS S3 bucket storage capacity, and alarms setup using thresholds as a monitoring strategy for breaches and threats.
+
 The above-mentioned points align with recommendations from AWS regarding monitoring targeted at failure detection and consistent change management using automation.
 
 ## Identified Gaps
