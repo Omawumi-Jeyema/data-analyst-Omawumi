@@ -2,6 +2,8 @@
 
 # Project Title: Design and Implementation of DAP on AWS for the City of Vancouver
 
+# Project Phase 1
+
 ## 🗂️ Project Description
 This project showcases the design and implementation of a Data Analytics Platform on AWS for the City of Vancouver (COV). The platform will be used to perform descriptive analysis, starting from data ingestion, processing, analytics, storage, and data summarization, leveraging AWS solutions offered through the AWS console. Additionally, the DAP is expected to leverage key attributes of the AWS space, such as dynamic scalability, availability, and self-tailored cost-effectiveness and efficiency.
 
@@ -115,10 +117,15 @@ To clean the dataset by resolving any missing values, correcting data type incon
 •	AWS Glue DataBrew
 ### 🧭 Process
 •	Another bucket was created in S3 with the title ‘cov-trf-oma’.
+
 •	Subfolders were created in the AWS S3 buckets. 
+
 •	The already profiled dataset was handled using AWS Glue DataBrew. The identified structural issues were corrected. For example, Exempt/Union was changed EditUnion.
+
 •	The cleaned data was titled ‘cov-hr-wprs-cln-oma’ and set to produce a single user CSV file and multiple Parquet files partitioned according to classification.
+
 •	It was connected to the prepared system and user folders in the S3 bucket “cov-trf-oma”
+
 •	The job was run to generate the required files. 
 
 ### Figure 4. Data Cleaning Recipe
@@ -236,8 +243,52 @@ Note: Figure 16 shows an additional table is auto-added to the WPRS data catalog
 
 The AWS Glue summarization job was implemented to answer the analytical question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s job classification? The job groups the cleaned dataset by the categorical column Classification and computes the average values for both MinimumHourlyRate and MaximumHourlyRate. This aggregation simplifies the dataset, enabling efficient querying and visualization of pay rate trends across job classifications in downstream tools such as Amazon Athena and QuickSight.
 
-# Conclusion
+# ✅ Conclusion
 In fulfillment of the Project’s request, this project focused on building a Data Analyst Platform for its Workforce Pay Rates and Sex data management. The pipeline is AWS-based, and key AWS console functionalities such as S3 buckets, AWS Glue and AWS Glue BrewData were used to achieve this as described in the stated steps above. The DAP was structured to ensure efficient data ingestion, availability, accessibility, security, and management, including storage. It also supports querying and analysis. It was used to answer the question, what is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?	The summarization stage effectively answered the question, revealing each the 68 city job classifications and their average minimum and maximum hourly pay rate.
+
+
+# Project Phase 1
+
+## 🗂️ Project Description
+
+Sequel to the completion of Project Phase 1, Project Phase 2 seeks to leverage the AWS solutions to implement Data Analysis, Governing, Security, and Monitoring components of the AWS DAP Implementation for the City of Vancouver (COV). This submission showcases the steps taken to execute each of these processes and efficiently deploy them according to AWS best practices and well-designed Architecture to achieve the desired results.
+
+# Data Analysis
+
+### 📌 Objectives
+•	To query the prepared city of Vancouver’s Workforce Pay Rates and Sex data in order to determine trends and answers to specific descriptive questions.
+
+•	To analyze the WPRS data to derive meaningful, supportive insights for COV’s decision-making and pay rates trends.
+
+### ☁️ AWS Management Console Service and Resources Used
+•	AWS Athena
+•	AWS S3 Buckets 
+•	Aws Data Glue Catalog 
+
+### 🧭 Process
+
+The WPRS dataset, already profiled, cleaned, and cataloged in the Project Phase 1, was queried using Athena. For the querying, three descriptive questions were set and matching SQL queries to derive the answers written as shown in Figures 3, 4, and 5.
+
+### Figure 13. Overview of Data Catalog
+
+<img width="412" alt="Figure 13  Overview of Data Catalog" src="https://github.com/user-attachments/assets/9a716fcc-a5ae-4f67-b2e1-af30af914f15" />
+
+Note: Figure 13 represents the output of running the code: select * from “cov_hr_trf_system” on Athena to view the structured data “cov_hr_trf_system.
+
+### Figure 14. Descriptive Question 1: What is the average minimum pay rate per hour in the City of Vancouver?
+
+<img width="412" alt="Figure 14  Descriptive Question 1" src="https://github.com/user-attachments/assets/81c45d06-6e7a-4aa8-862d-568552b1bbdd" />
+
+Note: Business question No 1 addresses the descriptive question, What is the average minimum pay rate per hour in the City of Vancouver? Using the code: select avg(minimumhourlyrate) as minimumhourlyrate_avg from "cov_hr_trf_system" limit 50; The minimum hourly rate is $35.184 in the city of Vancouver is $35 based on the queried data.
+
+
+### Figure 15. Descriptive Question 1
+### Figure 16. Descriptive Question 1
+
+
+
+
+
 
 
 
