@@ -267,7 +267,7 @@ Sequel to the completion of Project Phase 1, Project Phase 2 seeks to leverage t
 
 ### 🧭 Process
 
-The WPRS dataset, already profiled, cleaned, and cataloged in the Project Phase 1, was queried using Athena. For the querying, three descriptive questions were set and matching SQL queries to derive the answers written as shown in Figures 3, 4, and 5.
+The WPRS dataset, already profiled, cleaned, and cataloged in the Project Phase 1, was queried using Athena. For the querying, three descriptive questions were set and matching SQL queries to derive the answers written as shown in Figures 14.1, 14.2, and 14.3.
 
 ### Figure 13. Overview of Data Catalog
 
@@ -275,15 +275,37 @@ The WPRS dataset, already profiled, cleaned, and cataloged in the Project Phase 
 
 Note: Figure 13 represents the output of running the code: select * from “cov_hr_trf_system” on Athena to view the structured data “cov_hr_trf_system.
 
-### Figure 14. Descriptive Question 1: What is the average minimum pay rate per hour in the City of Vancouver?
+### Figure 14.1. Descriptive Question 1
 
-<img width="412" alt="Figure 14  Descriptive Question 1" src="https://github.com/user-attachments/assets/81c45d06-6e7a-4aa8-862d-568552b1bbdd" />
+<img width="412" alt="Figure 14 1  Descriptive Question 1" src="https://github.com/user-attachments/assets/07486b74-35bf-4199-ad06-829d82096c2e" />
 
-Note: Business question No 1 addresses the descriptive question, What is the average minimum pay rate per hour in the City of Vancouver? Using the code: select avg(minimumhourlyrate) as minimumhourlyrate_avg from "cov_hr_trf_system" limit 50; The minimum hourly rate is $35.184 in the city of Vancouver is $35 based on the queried data.
+Note: Business question No 1 addresses the descriptive question, What is the average minimum pay rate per hour in the City of Vancouver? Using the SQL query: select avg(minimumhourlyrate) as minimumhourlyrate_avg from "cov_hr_trf_system" limit 50; The minimum hourly rate is $35.184 in the city of Vancouver is $35 based on the queried data.
 
+### Figure 14.2. Descriptive Question 2
 
-### Figure 15. Descriptive Question 1
-### Figure 16. Descriptive Question 1
+<img width="411" alt="Figure 14 2  Descriptive Question 2" src="https://github.com/user-attachments/assets/03a7f0a9-2b1d-426e-ba30-ce2fba84779b" />
+
+Note: Business question No 1 addresses the descriptive question, What is the average minimum and maximum hourly pay rate for each Exempt / Union?
+Using the the SQL query: select exemptunion, avg(maximumhourlyrate) as maximumhourlyrate_avg, avg(minimumhourlyrate) as minimumhourlyrate_avg from "cov_hr_trf_system" group by exemptunion;
+
+### Table 2. Results from Descriptive Question 2
+
+| # | ExemptUnion             | MaximumHourlyRate_Avg | MinimumHourlyRate_Avg |
+|---|--------------------------|------------------------|------------------------|
+| 1 | Firefighters Un         | 67.0318                | 55.8595                |
+| 2 | IATSE                   | 39.162                 | 39.162                 |
+| 3 | IBEW Tech & Ins         | 50.28                  | 47.7625                |
+| 4 | CUPE 1004               | 34.5601                | 34.3939                |
+| 5 | Exempt                  | 59.7589                | 48.3035                |
+| 6 | Senior Exempt           | 81.952                 | 65.6610                |
+| 7 | CUPE 15                 | 36.6943                | 31.6673                |
+
+### Figure 14.3. Descriptive Question 1
+
+Why was it done?
+	This City of Vancouver WPRS dataset was analyzed based on the above descriptive questions to understand the difference in pay rates across ExemptUnions and also across different position titles. Unfortunately, the available data from COV was insufficient to analyze the difference and trends in the gender pay profile. 
+![image](https://github.com/user-attachments/assets/9bd631be-90fd-42fa-9573-30d3f7654e96)
+
 
 
 
