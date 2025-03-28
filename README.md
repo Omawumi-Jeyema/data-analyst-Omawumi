@@ -154,7 +154,7 @@ The cleaning of the profiled WPRS dataset was done to improve the consistency an
 ## 🔖 Step 4 Data Cataloging
 ### 📌 Objective 
 To create an AWS data catalog for the WPRS data that consists of structured schemas for easy connections between the data areas and support consistency.
-Key AWS Console Resources
+Key AWS Console Service and Resources
 •	AWS S3 Bucket
 
 •	AWS Glue
@@ -174,6 +174,16 @@ Key AWS Console Resources
 ### Figure 9. Successful Crawler Job Run
 
 <img width="468" alt="Figure 9  Successful Crawler Job Run" src="https://github.com/user-attachments/assets/47a8a442-dd99-4717-beed-dd6e0f451851" />
+
+Note: Figure 7, 8, and 9 illustrate the successful setup of the AWS Glue Crawler process. Figure 7 shows the creation of the target database, Figure 8 displays the generated Data Catalog table containing the inferred schema, and Figure 9 confirms the successful execution of the crawler job.
+
+### ⚖️ Justification
+
+The AWS Glue Crawler was implemented to automatically detect the schema of the cleaned Workfoce Payrates and Sex dataset and catalog it into a defined database and corresponding Data Catalog table. This process eliminates the need for manual schema definition, ensures consistent metadata management, and enables seamless querying through Amazon Athena. By registering the dataset within a structured database and table in the Glue Data Catalog, the data becomes fully discoverable, queryable, and ready for integration with downstream analytics tools such as Athena and QuickSight.
+
+
+
+
 
 
 
