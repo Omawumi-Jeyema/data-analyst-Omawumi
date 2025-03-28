@@ -253,7 +253,7 @@ In fulfillment of the Project’s request, this project focused on building a Da
 
 Sequel to the completion of Project Phase 1, Project Phase 2 seeks to leverage the AWS solutions to implement Data Analysis, Governing, Security, and Monitoring components of the AWS DAP Implementation for the City of Vancouver (COV). This submission showcases the steps taken to execute each of these processes and efficiently deploy them according to AWS best practices and well-designed Architecture to achieve the desired results.
 
-# Data Analysis
+## Data Analysis
 
 ### 📌 Objectives
 •	To query the prepared city of Vancouver’s Workforce Pay Rates and Sex data in order to determine trends and answers to specific descriptive questions.
@@ -304,9 +304,46 @@ Note. Table 2 displays the results from the Athena query. It shows the 7 Union T
 
 ### ⚖️ Justification
 
-This City of Vancouver WPRS dataset was analyzed based on the above descriptive questions to understand the difference in pay rates across ExemptUnions and also across different position titles. Unfortunately, the available data from COV was insufficient to analyze the difference and trends in the gender pay profile. 
+The Athena query was executed to generate a summarized view of average minimum and maximum hourly pay rates across different union classifications within the City of Vancouver workforce. By grouping the cleaned dataset by the ExemptUnion column and applying aggregation functions, the query provided clear, comparable metrics for each group. The first Athena query, which calculated the average minimum hourly pay for the entire dataset as $35.184, serves as a baseline for comparing pay levels across union groups. This analysis supports pay structure evaluation, highlights compensation trends, and informs data-driven decisions in HR and workforce planning.
 
 
+# 🔐 Data Security
+
+### 📌 Objective
+•	To ensure the protection, confidentiality, encryption, and availability of the WPRS data within the DAP.
+
+### ☁️ AWS Management Console Service and Resources Used
+•	AWS Identity and Access Management (IAM) 
+•	AWS Key Management Service (KMS) 
+•	AWS S3 Buckets
+### 🧭 Process
+Security measures were implemented to secure the Workforce sensitive data within the DAP. 
+
+Starting with creating a key using KMS for encryption and decryption. After which, permission was provided for different roles using Lab roles, creating scripts and eventually a policy. 
+
+Additionally, versioning was done for the S3 to improve confidentiality. 
+
+A backup S3 bucket was created, and a replication rule was implemented.
+
+### Figure 15. Key Management Service (KMS)
+
+<img width="412" alt="Figure 15  Key Management Service (KMS)" src="https://github.com/user-attachments/assets/69cd42ce-3920-47c7-9729-d9cc0ef11e72" />
+
+Note. Figure 6 shows the configured KMS for encryption and decryption of the data.
+
+### Figure 16. Implemented Encryption
+
+<img width="412" alt="Figure 16  Implemented Encryption" src="https://github.com/user-attachments/assets/d74b2e96-6123-4ca6-836c-1d4ee41817d6" />
+
+### Figure 17. Implemented Bucket Versioning
+
+<img width="412" alt="Figure 17  Implemented Bucket Versioning" src="https://github.com/user-attachments/assets/ae19f503-0339-49ea-b380-db686ec543b7" />
+
+### Figure 18 Implemented Replication Rule (“cov-wprs-rep-rul-oma”)
+
+<img width="416" alt="Figure 18  Implemented Replication Rule" src="https://github.com/user-attachments/assets/d2fb28c3-d94d-4593-b683-76c7a150b25a" />
+
+Note. Figure 16, 17, and 18 shows the successful encryption, versioning, and replication rule implementation.
 
 
 
