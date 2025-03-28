@@ -493,7 +493,7 @@ Although some of the best practices from AWS Reliability Pillar can be observed 
 Open Data Change Log. (25 February, 11). https://opendata.vancouver.ca/explore/dataset/open-data-change-log/log?disjunctive.datasets&sort=logdate&refine.datastids=workforce-payrates-and-gender![image](https://github.com/user-attachments/assets/c10ba012-2b4e-4611-a3c4-123b961eaae5)
 
 
-# 🧑‍⚖️ Authour
+# 🧑‍⚖️ Author
 
 ![Badge 2](https://github.com/user-attachments/assets/67b0cd01-fbbe-4542-8718-6b9dad0cf0e3)  <img width="229" alt="AWS Badge Cert" src="https://github.com/user-attachments/assets/b5f46705-bfd2-4cea-9d52-e9ffa0d45f55" />
 
