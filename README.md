@@ -186,6 +186,7 @@ The AWS Glue Crawler was implemented to automatically detect the schema of the c
 To summarize the data using categorical data and several metrics. 
 ### ☁️ AWS Management Console Service Used 
 •	AWS S3 Bucket
+
 •	AWS Glue
 ### 🧭 Process
 The steps shown in Figure 10. below were followed as follows:
@@ -210,6 +211,21 @@ The steps shown in Figure 10. below were followed as follows:
 ### Figure 10: The ETL Pipeline (WorkForcePayRatesAndSex-Summarization)
 
 <img width="412" alt="Figure 10  ETL Pipeline" src="https://github.com/user-attachments/assets/2907f197-8bf4-4b08-8d89-411372684c4c" />
+
+Figure 11. Successful Job Run of Summarized Data
+
+<img width="412" alt="Figure 11  Successful Job Run of Summarized Data" src="https://github.com/user-attachments/assets/18b0de17-84fb-49e0-8e3e-3bf4b6d377fd" />
+
+### Figure 11.1. Summarized Data Report for Users
+
+<img width="412" alt="Figure 11 1  Summarized Data Report for Users" src="https://github.com/user-attachments/assets/7ad26630-65a9-43e6-acfe-184a582af570" />
+
+### Figure 11.2. Summarized Data Report for System Users.png
+
+<img width="412" alt="Figure 11 2  Summarized Data Report for System Users" src="https://github.com/user-attachments/assets/2063de3c-0933-42c6-83a2-6a8dbcd3bdd5" />
+
+###
+
 
 
 
