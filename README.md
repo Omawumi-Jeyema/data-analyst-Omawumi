@@ -48,10 +48,23 @@ The dataset was extracted from City of Vancouver's Open Data Source (2025). It r
 | `Male`              | Employee count within each row; Ranges from 0 to 561                       |
 | `Total`             | Employee count within each row; Ranges from 10 to 584 (sum of Male + Female) |
 
+Note. Table 1. displays the 10 columns and the description of its content.
+
+### Graph 1. Line Graph of Dataset
+
+
+Note. Graph 1 Line Graph of City of Vancouvers Workers Pay Rates and Sex Data
+
+<img width="412" alt="Graph 1  Line Graph of City of Vancouvers Workers Pay Rates and Sex Data" src="https://github.com/user-attachments/assets/78fdd409-8f75-4147-a655-ca1a454c7f88" />
+
+Note: TGraph 1 represents the workforce pay rates and sex designations in terms of classification and average minimum and maximum hourly rates.
+
 ## 🧩 DAP Design and Implementation
 Draw.io was used to illustrate the cloud-based Data Analytics Platform (DAP) built on AWS, optimized for analyzing  COV’s workforce pay rates and gender distribution. The architecture integrates key AWS services such as S3 for data storage, AWS GlueDatabrew and Glue for cleaning, profiling and ETL processes.
 ### Figure 1. Design of the DAP 
-<img width="468" alt="Figure 1  Design of the DAP" src="https://github.com/user-attachments/assets/53e7e69e-f8cd-46f5-9c19-05a4cf46557b" />
+
+<img width="411" alt="Figure 1 DAP Design" src="https://github.com/user-attachments/assets/e68d4ac5-8919-47cb-a367-655287f24140" />
+
 
 Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR Operation Team and the City of Vancouver’s HR end user will have access to the DAP using a specific virtual server (server=HSVS-Oma)- web server.  The COV HR End User and HR Data Team will have direct access to the DAP as shown in Figure 1. All elements in the design, such as the S3 Buckets, ETL pipeline, Catalog, functions, and usage, are explained in detail in the different phases (Steps 1 - 4) below. This design is continually scalable due to AWS’s scalable attributes.
 
