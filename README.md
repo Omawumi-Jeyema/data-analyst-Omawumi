@@ -23,9 +23,9 @@ vi.	Data Summarization: The dataset is summarized using metrics created in AWS G
 
 # Data Analytics Platform
 ## 📌 Objective
-To design and implement DAP to support COV’s migration initiative to AWS
+- To design and implement DAP to support COV’s migration initiative to AWS
 ## 📊 Descriptive Analysis
-Question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?
+- Question: What is the average minimum and maximum hourly pay rate for each City of Vancouver’s Job classification?
 ## 📋 Dataset Overview
 The dataset was extracted from City of Vancouver's Open Data Source (2025). It represents a breakdown of the city’s workforce Pay Rates based on the below columns including the male and the female sex designation. It includes 598 rows and 10 columns of data extracted from 2019 to the 2023 City of Vancouver Workforce Payrate information as shown in Table 1:
 
@@ -67,15 +67,15 @@ Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR 
 
 ## 🚪 Step 1. Dataset Ingestion
 ### 📌 Objective 
-•	To ingest CSV file of the data into the AWS cloud
+- To ingest CSV file of the data into the AWS cloud
 ### ☁️ AWS Management Console Service Used 
-•	AWS S3 Bucket
+- AWS S3 Bucket
 ### 🧭 Process
-•	An S3 bucket titled ‘cov-raw-oma’ was prepared in AWS for the ingestion.
+- An S3 bucket titled ‘cov-raw-oma’ was prepared in AWS for the ingestion.
 
-•	A subfolder titled hr was created. This is because the data is attributed to the COV Human Resources E.D.I.O Office.
+- A subfolder titled hr was created. This is because the data is attributed to the COV Human Resources E.D.I.O Office.
 
-•	The dataset titled “workforce_payrates_and_sex” in CSV format was uploaded directly into the prepared S3 bucket folder.
+- The dataset titled “workforce_payrates_and_sex” in CSV format was uploaded directly into the prepared S3 bucket folder.
 
 ### Figure 2: Workforce Pay Rates and Sex CSV File Ingested into AWS S3 Bucket
 <img width="468" alt="Figure 2  Screenshot of Ingested CSV file" src="https://github.com/user-attachments/assets/e402725a-95dd-42d2-91c6-5f557a885431" />
@@ -87,14 +87,14 @@ This was done to ingest the data into the AWS cloud storage for easy access, que
 
 ## 🔍 Step 2. Data Profiling
 ### 📌 Objective 
-•	To perform data profiling on the dataset to assess data quality, detect anomalies, and ensure readiness for data cleaning and transformation.
+- To perform data profiling on the dataset to assess data quality, detect anomalies, and ensure readiness for data cleaning and transformation.
 ### ☁️ AWS Management Console Service Used 
-•	AWS Glue DataBrew
-•	AWS S3 Bucket
+- AWS Glue DataBrew
+- AWS S3 Bucket
 ### 🧭 Process
-•	A job with a project named “cov-hr-wrps-prj-oma’ and a dataset ‘cov-hr-wprs-ds-oma’ was created in AWS Glue Data Brew and the ingested dataset (from the S3 bucket- cov-raw-oma) was connected.
+- A job with a project named “cov-hr-wrps-prj-oma’ and a dataset ‘cov-hr-wprs-ds-oma’ was created in AWS Glue Data Brew and the ingested dataset (from the S3 bucket- cov-raw-oma) was connected.
 
-•	The data profile was run to create a job profile titled ‘cov-hr-wprs-prf-oma’ as shown in Figure 3.
+- The data profile was run to create a job profile titled ‘cov-hr-wprs-prf-oma’ as shown in Figure 3.
 
 ### 🧾 Dataset Summary
 - **Total Rows:** 598  
@@ -125,21 +125,21 @@ Profiling the dataset with AWS Glue DataBrew provided a clear assessment of data
 ### 📌 Objective 
 To clean the dataset by resolving any missing values, correcting data type inconsistencies, removing duplicates, and standardizing entries to ensure data integrity and consistency for downstream analysis.
 ### ☁️ AWS Management Console Service Used 
-•	S3 Bucket
+- S3 Bucket
 
-•	AWS Glue DataBrew
+- AWS Glue DataBrew
 ### 🧭 Process
-•	Another bucket was created in S3 with the title ‘cov-trf-oma’.
+- Another bucket was created in S3 with the title ‘cov-trf-oma’.
 
-•	Subfolders were created in the AWS S3 buckets. 
+- Subfolders were created in the AWS S3 buckets. 
 
-•	The already profiled dataset was handled using AWS Glue DataBrew. The identified structural issues were corrected. For example, Exempt/Union was changed EditUnion.
+- The already profiled dataset was handled using AWS Glue DataBrew. The identified structural issues were corrected. For example, Exempt/Union was changed EditUnion.
 
-•	The cleaned data was titled ‘cov-hr-wprs-cln-oma’ and set to produce a single user CSV file and multiple Parquet files partitioned according to classification.
+- The cleaned data was titled ‘cov-hr-wprs-cln-oma’ and set to produce a single user CSV file and multiple Parquet files partitioned according to classification.
 
-•	It was connected to the prepared system and user folders in the S3 bucket “cov-trf-oma”
+- It was connected to the prepared system and user folders in the S3 bucket “cov-trf-oma”
 
-•	The job was run to generate the required files. 
+- The job was run to generate the required files. 
 
 ### Figure 4. Data Cleaning Recipe
 
@@ -175,13 +175,13 @@ The cleaning of the profiled WPRS dataset was done to improve the consistency an
 ### 📌 Objective 
 To create an AWS data catalog for the WPRS data that consists of structured schemas for easy connections between the data areas and support consistency.
 ### ☁️ AWS Management Console Service Used 
-•	AWS S3 Bucket
+- AWS S3 Bucket
 
-•	AWS Glue
+- AWS Glue
 
 ### 🧭 Process
-•	As shown in Figure 11, a new database for the dataset titled ‘cov-data-catalog-oma’ was created.
-•	Structured information stored in tables (containing Schema) titled ‘cov_hr_trf_system was also created as an output of running crawler in AWS Data Glue.
+- As shown in Figure 11, a new database for the dataset titled ‘cov-data-catalog-oma’ was created.
+- Structured information stored in tables (containing Schema) titled ‘cov_hr_trf_system was also created as an output of running crawler in AWS Data Glue.
 
 ### Figure 7. Database Created
 
@@ -205,28 +205,28 @@ The AWS Glue Crawler was implemented to automatically detect the schema of the c
 ### 📌 Objective 
 To summarize the data using categorical data and several metrics. 
 ### ☁️ AWS Management Console Service Used 
-•	AWS S3 Bucket
+- AWS S3 Bucket
 
-•	AWS Glue
+- AWS Glue
 ### 🧭 Process
 The steps shown in Figure 10. below were followed as follows:
-•	Extract WPRS: The prepared data was extracted from the database ‘cov-data-catalog-oma’ and table ‘cov-hr-trf-system’.
+- Extract WPRS: The prepared data was extracted from the database ‘cov-data-catalog-oma’ and table ‘cov-hr-trf-system’.
 
-•	Change Schema: This was used to drop a column.
+- Change Schema: This was used to drop a column.
 
-•	Filter WPRS: This was used to filter rows. Only rows from 2019 and above were retained.
+- Filter WPRS: This was used to filter rows. Only rows from 2019 and above were retained.
 
-•	Summarize WPRS: The data was grouped using the categorical column titled “Classification” and aggregated using average minimum hourly pay and average maximum hourly rate to generate metrics.
+- Summarize WPRS: The data was grouped using the categorical column titled “Classification” and aggregated using average minimum hourly pay and average maximum hourly rate to generate metrics.
 
-•	Add date to summarized WPRS: The report date was added to the summarized WPRS from the step above
+- Add date to summarized WPRS: The report date was added to the summarized WPRS from the step above
 
-•	Convert to LTZ: The data added to the summarized WPRS was converted to LTZ (Local time zone) 
+- Convert to LTZ: The data added to the summarized WPRS was converted to LTZ (Local time zone) 
 
-•	Prepare to Load: The initial date added was dropped and the LTZ date version was retained. The schema was reviewed, and the titles adjusted to ensure consistency.
+- Prepare to Load: The initial date added was dropped and the LTZ date version was retained. The schema was reviewed, and the titles adjusted to ensure consistency.
 
-•	Load System and Load Users: The steps were done to ensure the file is stored in an easily accessible manner to both users and systems, with the right partitioning and compression or “no compression” for each. The convert to one file option was used to harmonize both.
+- Load System and Load Users: The steps were done to ensure the file is stored in an easily accessible manner to both users and systems, with the right partitioning and compression or “no compression” for each. The convert to one file option was used to harmonize both.
 
-•	Save and Run: The summarized job was saved and run as shown in Figure 14 below.
+- Save and Run: The summarized job was saved and run as shown in Figure 14 below.
 
 ### Figure 10: The ETL Pipeline (WorkForcePayRatesAndSex-Summarization)
 
@@ -269,14 +269,14 @@ Sequel to the completion of Project Phase 1, Project Phase 2 seeks to leverage t
 ## 📊 Data Analysis
 
 ### 📌 Objectives
-•	To query the prepared city of Vancouver’s Workforce Pay Rates and Sex data in order to determine trends and answers to specific descriptive questions.
+- To query the prepared city of Vancouver’s Workforce Pay Rates and Sex data in order to determine trends and answers to specific descriptive questions.
 
-•	To analyze the WPRS data to derive meaningful, supportive insights for COV’s decision-making and pay rates trends.
+- To analyze the WPRS data to derive meaningful, supportive insights for COV’s decision-making and pay rates trends.
 
 ### ☁️ AWS Management Console Service and Resources Used
-•	AWS Athena
-•	AWS S3 Buckets 
-•	Aws Data Glue Catalog 
+- AWS Athena
+- AWS S3 Buckets 
+- Aws Data Glue Catalog 
 
 ### 🧭 Process
 
@@ -323,20 +323,20 @@ The Athena query was executed to generate a summarized view of average minimum a
 ## 🔐 Data Security
 
 ### 📌 Objective
-•	To ensure the protection, confidentiality, encryption, and availability of the WPRS data within the DAP.
+- To ensure the protection, confidentiality, encryption, and availability of the WPRS data within the DAP.
 
 ### ☁️ AWS Management Console Service and Resources Used
-•	AWS Identity and Access Management (IAM) 
-•	AWS Key Management Service (KMS) 
-•	AWS S3 Buckets
+- AWS Identity and Access Management (IAM) 
+- AWS Key Management Service (KMS) 
+- AWS S3 Buckets
 ### 🧭 Process
-•	Security measures were implemented to secure the Workforce sensitive data within the DAP. 
+- Security measures were implemented to secure the Workforce sensitive data within the DAP. 
 
-•	Starting with creating a key using KMS for encryption and decryption. After which, permission was provided for different roles using Lab roles, creating scripts and eventually a policy. 
+- Starting with creating a key using KMS for encryption and decryption. After which, permission was provided for different roles using Lab roles, creating scripts and eventually a policy. 
 
-•	Additionally, versioning was done for the S3 to improve confidentiality. 
+- Additionally, versioning was done for the S3 to improve confidentiality. 
 
-•	A backup S3 bucket was created, and a replication rule was implemented.
+- A backup S3 bucket was created, and a replication rule was implemented.
 
 ### Figure 15. Key Management Service (KMS)
 
@@ -364,16 +364,16 @@ The S3 replication was implemented to improve its availability of the database, 
 
 ## 🛡️ Data Governance
 ### 📌 Objective
-•	To implement policies and controls targeted at the WPRS data quality, consistency, accuracy and accountability in the DAP.
+- To implement policies and controls targeted at the WPRS data quality, consistency, accuracy and accountability in the DAP.
 ### ☁️ AWS Management Console Service and Resources Used
-•	Data Glue
-•	S3 Bucket
+- Data Glue
+- S3 Bucket
 ### 🧭 Process
-•	Deployed AWS Glue, where a visual ETL pipeline was created for the WPRS data starting with extract (from AWS S3 Bucket), before proceeding to transform the loaded WPRS data using quality checks. 
+- Deployed AWS Glue, where a visual ETL pipeline was created for the WPRS data starting with extract (from AWS S3 Bucket), before proceeding to transform the loaded WPRS data using quality checks. 
 
-•	Data quality rules were implemented for the WPRS data to ensure data organization, assessment, quality, compliance, and accuracy within the DAP. The rules included “Completeness for PositionTitle >= 0.95”, “Uniqueness for ExemptUnion > 0.99” and “Data freshness for Year < 2,555 days” to rule out any data that exceeds 7 years”. 
+- Data quality rules were implemented for the WPRS data to ensure data organization, assessment, quality, compliance, and accuracy within the DAP. The rules included “Completeness for PositionTitle >= 0.95”, “Uniqueness for ExemptUnion > 0.99” and “Data freshness for Year < 2,555 days” to rule out any data that exceeds 7 years”. 
 
-•	Several more transforming and loading steps like changing schema (to Drop the extra quality rules and evaluation columns created), auto- balancing and eventual loading of the CSV outputs to the “Passed and Failed folders in the AWS S3 Bucket”.
+- Several more transforming and loading steps like changing schema (to Drop the extra quality rules and evaluation columns created), auto- balancing and eventual loading of the CSV outputs to the “Passed and Failed folders in the AWS S3 Bucket”.
 
 ### Figure 19. Implemented Data Quality Rules (cov-hr-wprs-QC-Oma)
 
@@ -410,22 +410,22 @@ This data governance implementation was done for the WPRS data to ensure that qu
 ## 🚨 Data Monitoring
 
 ### 📌 Objective
-•	To proactively monitor the COV WPRS resources for actionable insights.
+- To proactively monitor the COV WPRS resources for actionable insights.
 
-•	To track WPRS user activities and API usage across the COV DAP for auditing and traceability.
+- To track WPRS user activities and API usage across the COV DAP for auditing and traceability.
 
 ### ☁️ AWS Management Console Service and Resources Used
-•	AWS CloudWatch
-•	AWS CloudTrail
+- AWS CloudWatch
+- AWS CloudTrail
 
 ### 🧭 Process
-•	In order to systematically and proactively monitor the reliability, performance, and storage capacity, AWS CloudWatch was configured using AWS S3 buckets as the metrics. 
+- In order to systematically and proactively monitor the reliability, performance, and storage capacity, AWS CloudWatch was configured using AWS S3 buckets as the metrics. 
 
-•	A threshold was set at 60,000kb and a corresponding alarm was configured for notifications in the event of breaches. 
+- A threshold was set at 60,000kb and a corresponding alarm was configured for notifications in the event of breaches. 
 
-•	Frequency of monitoring was set at daily for regular monitoring. 
+- Frequency of monitoring was set at daily for regular monitoring. 
 
-•	Likewise, CloudTrail was set to capture and record COV DAP user logs and activity monitoring.
+- Likewise, CloudTrail was set to capture and record COV DAP user logs and activity monitoring.
 
 ### Figure 22.1. Threshold Set at 60.0K BucketSizeBytes
 
@@ -455,9 +455,9 @@ Due to the fact that expected storage demand is not exactly known and Workforce 
 A key requirement for a Data Analytics Platform is reliability. A shortage of this could pose numerous risks to the DAP and the confidence of its users. Therefore, it is insightful to Evaluate the developed COV DAP using the AWS Well-Architected Framework Reliability Pillars as benchmarks. Some of the DAPs current key alignment to the Reliability Pillars includes monitoring and automation as explained below.
 
 ## Aligned Reliability Practices
-•	Automation: Many AWS services, such as AWS Glue, thrive on automation as this greatly reduces the risk of errors and supports change management. 
+- Automation: Many AWS services, such as AWS Glue, thrive on automation as this greatly reduces the risk of errors and supports change management. 
 
-•	Monitoring and Notifications (Alarms): The AWS service CloudWatch was implemented to monitor key metrics like AWS S3 bucket storage capacity, and alarms setup using thresholds as a monitoring strategy for breaches and threats.
+- Monitoring and Notifications (Alarms): The AWS service CloudWatch was implemented to monitor key metrics like AWS S3 bucket storage capacity, and alarms setup using thresholds as a monitoring strategy for breaches and threats.
 
 The above-mentioned points align with recommendations from AWS regarding monitoring targeted at failure detection and consistent change management using automation.
 
