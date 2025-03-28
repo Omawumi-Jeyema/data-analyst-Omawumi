@@ -320,7 +320,7 @@ Note. Table 2 displays the results from the Athena query. It shows the 7 Union T
 The Athena query was executed to generate a summarized view of average minimum and maximum hourly pay rates across different union classifications within the City of Vancouver workforce. By grouping the cleaned dataset by the ExemptUnion column and applying aggregation functions, the query provided clear, comparable metrics for each group. The first Athena query, which calculated the average minimum hourly pay for the entire dataset as $35.184, serves as a baseline for comparing pay levels across union groups. This analysis supports pay structure evaluation, highlights compensation trends, and informs data-driven decisions in HR and workforce planning.
 
 
-# 🔐 Data Security
+## 🔐 Data Security
 
 ### 📌 Objective
 •	To ensure the protection, confidentiality, encryption, and availability of the WPRS data within the DAP.
@@ -407,7 +407,7 @@ Note.  Figure 21 shows that the data quality check was successfully run. Figures
 
 This data governance implementation was done for the WPRS data to ensure that quality control rules were established to foster consistency, improve the WPRS data quality, organization, and accuracy within the DAP. 
 
-## 🚦 Data Monitoring
+## 🚨 Data Monitoring
 
 ### 📌 Objective
 •	To proactively monitor the COV WPRS resources for actionable insights.
@@ -451,7 +451,7 @@ Note. Figure 23 is a screenshot of the configured CloudTrail “cov-hr-wprs-tra-
 
 Due to the fact that expected storage demand is not exactly known and Workforce statistics are subject to modification, it is important to keep track of changes in the storage resource utilization to enable proactive management geared at optimum efficiency. Additionally, the set thresholds are for monitoring the storage size so that actions can be taken when the storage size exceeds it. The Outputs for the CloudTrail configuration like captured user logs, are vital for traceability, which is a security pillar and also helps to ensure compliance among users, specifically during audits or in the case of any uncertainty regarding the responsible party for any action taken in the DAP. 
 
-## Evaluation of the Data Analytic Platform (DAP) Based on AWS Reliability Principles
+## 🔍 Evaluation of the Data Analytic Platform (DAP) Based on AWS Reliability Principles
 A key requirement for a Data Analytics Platform is reliability. A shortage of this could pose numerous risks to the DAP and the confidence of its users. Therefore, it is insightful to Evaluate the developed COV DAP using the AWS Well-Architected Framework Reliability Pillars as benchmarks. Some of the DAPs current key alignment to the Reliability Pillars includes monitoring and automation as explained below.
 
 ## Aligned Reliability Practices
@@ -487,6 +487,11 @@ Although some of the best practices from AWS Reliability Pillar can be observed 
 ### 5. Deploy Interactive Dashboards
 - Build dynamic dashboards with **Amazon QuickSight**.
 - Add filters for year, classification, and gender for user-friendly exploration.
+
+## Data Source (Reference)
+
+Open Data Change Log. (25 February, 11). https://opendata.vancouver.ca/explore/dataset/open-data-change-log/log?disjunctive.datasets&sort=logdate&refine.datastids=workforce-payrates-and-gender![image](https://github.com/user-attachments/assets/c10ba012-2b4e-4611-a3c4-123b961eaae5)
+
 
 # 🧑‍⚖️ Authour
 
