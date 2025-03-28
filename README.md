@@ -51,7 +51,7 @@ Draw.io was used to illustrate the cloud-based Data Analytics Platform (DAP) bui
 Note: Figure 1 represents the DAP for the dataset. The City of Vancouver’s HR Operation Team and the City of Vancouver’s HR end user will have access to the DAP using a specific virtual server (server=HSVS-Oma)- web server.  The COV HR End User and HR Data Team will have direct access to the DAP as shown in Figure 1. All elements in the design, such as the S3 Buckets, ETL pipeline, Catalog, functions, and usage, are explained in detail in the different phases (Steps 1 - 4) below. This design is continually scalable due to AWS’s scalable attributes.
 
 ## 🚪 Step 1. Dataset Ingestion
-### Objective 
+### 📌 Objective 
 •	To ingest CSV file of the data into the AWS cloud
 ### Key AWS Service and Resources  
 •	AWS S3 Bucket
@@ -71,7 +71,7 @@ Note: Figure 4 shows the completed ingestion of the City of Vancouver’s Govern
 This was done to ingest the data into the AWS cloud storage for easy access, query, collaboration, analytical management, storage, security, and scalability of the WPRS data.
 
 ## 🔍 Step 2. Data Profiling
-### Objective 
+### 📌 Objective 
 •	To perform data profiling on the dataset to assess data quality, detect anomalies, and ensure readiness for data cleaning and transformation.
 ### Key AWS Service and Resources
 •	AWS Glue DataBrew
@@ -107,10 +107,11 @@ Note: Figure 5 represents the generated WPRS dataset profile, and the displayed 
 Profiling the dataset with AWS Glue DataBrew provided a clear assessment of data quality and structure before proceeding to the cleaning stage. It checked for potential issues such as data type mismatches, outliers, and missing or duplicate values, ensuring a well-informed foundation for effective data preparation.
  
 ## 🧹 Step 3. Data Cleaning
-### Objective 
+### 📌 Objective 
 To clean the dataset by resolving any missing values, correcting data type inconsistencies, removing duplicates, and standardizing entries to ensure data integrity and consistency for downstream analysis.
 ### Key AWS Service and Resources
 •	S3 Bucket
+
 •	AWS Glue DataBrew
 ### 🧭 Process
 •	Another bucket was created in S3 with the title ‘cov-trf-oma’.
@@ -119,6 +120,15 @@ To clean the dataset by resolving any missing values, correcting data type incon
 •	The cleaned data was titled ‘cov-hr-wprs-cln-oma’ and set to produce a single user CSV file and multiple Parquet files partitioned according to classification.
 •	It was connected to the prepared system and user folders in the S3 bucket “cov-trf-oma”
 •	The job was run to generate the required files. 
+
+### Figure 4. Data Cleaning Recipe
+
+<img width="412" alt="Figure 4  Data Cleaning Recipe" src="https://github.com/user-attachments/assets/72b0924c-b86c-4ee5-b62e-beb81c5ef643" />
+
+### Figure 5. Successful Cleaning Job
+
+<img width="412" alt="Figure 5  Successful Cleaning Job" src="https://github.com/user-attachments/assets/05faecb2-d008-4fb4-8e5e-5c2ea0b156b4" />
+
 
 
 
