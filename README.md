@@ -70,8 +70,57 @@ Note: Figure 4 shows the completed ingestion of the City of Vancouver’s Govern
 ### ⚖️ Justification
 This was done to ingest the data into the AWS cloud storage for easy access, query, collaboration, analytical management, storage, security, and scalability of the WPRS data.
 
+## 🔍 Step 2. Data Profiling
+### Objective 
+•	To perform data profiling on the dataset to assess data quality, detect anomalies, and ensure readiness for data cleaning and transformation.
+### Key AWS Service and Resources
+•	AWS Glue DataBrew
+•	AWS S3 Bucket
+### 🧭 Process
+•	A job with a project named “cov-hr-wrps-prj-oma’ and a dataset ‘cov-hr-wprs-ds-oma’ was created in AWS Glue Data Brew and the ingested dataset (from the S3 bucket- cov-raw-oma) was connected.
 
-### 🧹 
+•	The data profile was run to create a job profile titled ‘cov-hr-wprs-prf-oma’ as shown in Figure 3.
+
+### 🧾 Dataset Summary
+- **Total Rows:** 598  
+- **Total Columns:** 10  
+- **Total Cells:** 5,980  
+
+### ✅ Data Validity
+- **Valid Cells:** 5,980  
+- **Missing Cells:** 0  
+- **Duplicate Rows:** 0  
+- **Valid Rows:** 598  
+
+### 🔢 Column Types
+- **Integer Columns:** 4  
+- **Float Columns:** 2  
+- **String Columns:** 4  
+
+### Figure 3: Overview of Data Profile (cov-hr-ds-prf-oma)
+
+<img width="412" alt="Figure 3  Data Profile Overview" src="https://github.com/user-attachments/assets/195885d8-a7f0-424c-b966-a3c886da5153" />
+
+Note: Figure 5 represents the generated WPRS dataset profile, and the displayed outcome indicates 100% valid cells and 0 missing and duplicate data.
+
+### ⚖️ Justification
+Profiling the dataset with AWS Glue DataBrew provided a clear assessment of data quality and structure before proceeding to the cleaning stage. It checked for potential issues such as data type mismatches, outliers, and missing or duplicate values, ensuring a well-informed foundation for effective data preparation.
+ 
+## 🧹 Step 3. Data Cleaning
+### Objective 
+To clean the dataset by resolving any missing values, correcting data type inconsistencies, removing duplicates, and standardizing entries to ensure data integrity and consistency for downstream analysis.
+### Key AWS Service and Resources
+•	S3 Bucket
+•	AWS Glue DataBrew
+### 🧭 Process
+•	Another bucket was created in S3 with the title ‘cov-trf-oma’.
+•	Subfolders were created in the AWS S3 buckets. 
+•	The already profiled dataset was handled using AWS Glue DataBrew. The identified structural issues were corrected. For example, Exempt/Union was changed EditUnion.
+•	The cleaned data was titled ‘cov-hr-wprs-cln-oma’ and set to produce a single user CSV file and multiple Parquet files partitioned according to classification.
+•	It was connected to the prepared system and user folders in the S3 bucket “cov-trf-oma”
+•	The job was run to generate the required files. 
+
+
 
 
 
